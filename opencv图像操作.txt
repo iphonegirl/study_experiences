@@ -1,0 +1,42 @@
+———————————————opencv图像操作————————————————
+图像形态学运算
+1.膨胀
+膨胀就是对图像高亮部分进行“领域扩张”，效果图拥有比原图更大的高亮区域；
+//获取自定义核
+Mat element = getStructuringElement(MORPH_RECT, Size(15, 15)); //第一个参数MORPH_RECT表示矩形的卷积核，当然还可以选择椭圆形的、交叉型的
+//膨胀操作
+dilate(img, out, element);
+2.腐蚀
+腐蚀是原图中的高亮区域被蚕食，效果图拥有比原图更小的高亮区域。
+//获取自定义核
+Mat element = getStructuringElement(MORPH_RECT, Size(15, 15)); //第一个参数MORPH_RECT表示矩形的卷积核，当然还可以选择椭圆形的、交叉型的
+//腐蚀操作
+erode(img, out, element);
+3.自适应阈值化
+adaptiveThreshold(
+	cv::InputArray src, // 输入图像
+	cv::OutputArray dst, // 输出图像
+	double maxValue, // 向上最大值
+	int adaptiveMethod, // 自适应方法，平均或高斯
+	int thresholdType // 阈值化类型
+	int blockSize, // 块大小
+	double C // 常量
+);
+4.寻找图像中的物体的轮廓
+void cv::findContours(  
+ InputOutputArray    image,//输入图像，必须为单通道图像
+ OutputArrayOfArrays     contours,//检测到的轮廓，每个轮廓以点向量存在即vector<point>
+ int     mode,//轮廓检索模式，可以通过cv::RetrievalModes()查看详细信息
+ int     method,//轮廓反倒是近似方法可以通过cv::ContourApproximationModes()查看详细信息 
+ Point   offset = Point() //轮廓点可选偏移量
+)
+5.得到包覆轮廓的最小矩形
+Rect boundingRect(InputArray points) 
+6.得到包覆轮廓的最小斜矩形                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+RotatedRect minAreaRect(InputArray points)
+7.得到包覆轮廓的最小圆形
+void minEnclosingCircle(InputArray points,
+				 Point2f& center,
+				 float& radius)
+
+

@@ -1,0 +1,33 @@
+————————————Qt开发———————————
+1.QApplication
+2.QLabel
+3.QPushButton
+4.信号槽connect(sender, signal, receiver,slot)
+5.主窗口(QMainWindow)
+6.QSlider(滑动条)
+QWidget window;
+QSlider *slider = new QSlider(Qt::Vertical,&window);
+slider->setRange(0, 100);
+7.QSpinBox(只能输入数字的输入框，带有上下箭头)
+QWidget window;
+QSpinBox *spinBox = new QSpinBox(&window);
+spinBox->setRange(0, 100);
+6.布局管理器(QLayout)
+QHBoxLayout：按照水平方向从左到右布局；
+QVBoxLayout：按照竖直方向从上到下布局；
+QGridLayout：在一个网格中进行布局，类似于 HTML 的 table；
+QFormLayout：按照表格布局，每一行前面是一段文本，文本后面跟随一个组件（通常是输入框），类似 HTML 的 form；
+7.QDialog(对话框)
+8.对话框数据传递
+9.qt内置对话框
+QColorDialog：选择颜色；
+QFileDialog：选择文件或者目录；
+QFontDialog：选择字体；
+QInputDialog：允许用户输入一个值，并将其值返回；
+QMessageBox：模态对话框，用于显示信息、询问问题等；
+QPageSetupDialog：为打印机提供纸张相关的选项；
+QPrintDialog：打印机配置；
+QPrintPreviewDialog：打印预览；
+QProgressDialog：显示操作过程。
+
+

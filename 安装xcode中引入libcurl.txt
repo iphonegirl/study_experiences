@@ -1,0 +1,12 @@
+
+————————安装工具——————
+1.安装m4
+http://www.gnu.org/software/m4/下载m4最新版解压，进入解压后目录，运行
+./configure --prefix=/usr/local 配置安装路径
+运行make，
+运行sodu make install
+2.安装autoconf
+http://www.gnu.org/software/autoconf/下载autoconf最新版解压，进入解压后目录运行
+./configure --prefix=/usr/local 配置安装路径
+运行make，
+运行sodu make install

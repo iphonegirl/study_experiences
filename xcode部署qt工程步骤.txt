@@ -1,0 +1,9 @@
+—————————————xcode中开发qt工程——————————
+1.下载qt依赖包 brew install qt(当前下载为v5.11.2)，运行qmake -v查看qt版本（若没有找到qmake命令则通过qmake的绝对路径运行，mac重的外部依赖一般在/usr/local/Cellar下，如：/usr/local/Cellar/qt/5.11.2/bin/qmake -v）
+
+2.新建工程目录qttest,进入工程目录，创建一个新文件( *.c/*.cpp)touch main.cpp，运行命令：/usr/local/Cellar/qt/5.11.2/bin/qmake -project,接着运行命令 /usr/local/Cellar/qt/5.11.2/bin/qmake -spec macx-xcode,生成qt的Xcode工程。打开qttest.xcodeproj可进行开发
+
+注意：1.添加qt framework 工程->targets->attest->build phases->link binary with libraries ->add->add other -> qt path/frameworks/xxx.framework
+	   2.生成xcode工程文件之前必须有可编译文件
+
+

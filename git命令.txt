@@ -1,0 +1,76 @@
+https://www.ptorch.com/news/195.html
+
+————————————git命令——————————
+配置全局变量
+git config --global user.name=xxx(git config --global user.name xxx)
+git config --global user.email=xxx(git config --global user.email xxx)
+git config --global core.editor=vim(emacs)
+git config --list 列出配置项
+—————————————————
+获取git仓库
+1.现有项目中初始化仓库,进入项目目录运行git init
+2.跟踪所有需要提交的文件git add filename
+3.git commit 提交到本地仓库
+Git commit -a 跳过git add步骤将所有会将所有已经跟踪过的文件暂存起来一起提交
+Git commit -m “initial project” 带注释提交
+4.git add filename将修改过或者新增的文件暂存起来（跟踪）
+—————————————————
+克隆现有的仓库,git clone 默认配置下仓库中的额所有文件的所有版本都会被拉下来
+拉去指定文件 git clone [url] 拉取文件的最新版本
+
+—————————————————
+移除文件
+从git中移除一文件，本地文件也被删除git rm filename 记录移除文件的操作，下一次提交该文件不再纳入版本管理，如果删除之前修改过且已经放到暂存区，需要加-f强制删除。
+想把文件仓库删除，但是保留在磁盘中git rm --cached filename
+重命名文件git mv fromfile tofile,磁盘和git仓库都会修改
+
+—————————————————
+查看提交历史：git log 按时间降序列出所有的更新的信息
+git log -p 显示每次提交的内容差异
+Git log --stat显示每次提交的简略统计信息
+Git log --pretty 指定使用不同的方式展示提交历史
+git log --pretty=format::””自定义显示格式
+选项
+说明
+%H
+提交对象（commit）的完整哈希字串
+%h
+提交对象的简短哈希字串
+%T
+树对象（tree）的完整哈希字串
+%t
+树对象的简短哈希字串
+%P
+父对象（parent）的完整哈希字串
+%p
+父对象的简短哈希字串
+%an
+作者（author）的名字
+%ae
+作者的电子邮件地址
+%ad
+作者修订日期（可以用 --date= 选项定制格式）
+%ar
+作者修订日期，按多久以前的方式显示
+%cn
+提交者（committer）的名字
+%ce
+提交者的电子邮件地址
+%cd
+提交日期
+%cr
+提交日期，按多久以前的方式显示
+%s
+提交说明
+
+——————————————————————————
+取消暂存git reset HEAD filename
+还原文件为上次提交后的状态 git checkout -- filename
+
+------------------------------------------------
+Git remote add <shortname> <url>添加远程仓库(Git remote add origin remoteurlpath)
+git fetch [remote-name] 拉取所有你还没有的数据
+Git pull 将文件从远程分支中拉取到本地仓库并自动尝试合并到当前分支
+git push [remote-name] 推送项目到远程仓库
+
+Git remote -v 列出所有远程仓库
